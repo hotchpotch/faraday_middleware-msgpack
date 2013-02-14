@@ -1,16 +1,20 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'faraday_middleware-msgpack/version'
 
 Gem::Specification.new do |gem|
+  gem.add_dependency 'faraday_middleware', '>= 0.8.0'
+  gem.add_dependency 'msgpack', '>= 0.4.7'
+  gem.add_development_dependency 'rake', '~> 0.9'
+  gem.add_development_dependency 'rspec', '~> 2.6'
+
   gem.name          = "faraday_middleware-msgpack"
-  gem.version       = FaradayMiddleware::Msgpack::VERSION
+  gem.version       = "0.0.1"
   gem.authors       = ["Yuichi Tateno"]
   gem.email         = ["hotchpotch@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{faraday middleware msgpack}
+  gem.summary       = %q{faraday middleware msgpack}
+  gem.homepage      = "https://github.com/hotchpotch/faraday_middleware-msgpack"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
