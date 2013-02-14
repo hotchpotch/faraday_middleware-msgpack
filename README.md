@@ -1,5 +1,8 @@
 # FaradayMiddleware::Msgpack
 
+[![Build Status](https://secure.travis-ci.org/hotchpotch/faraday_middleware-msgpack.png?branch=master)](http://travis-ci.org/hotchpotch/faraday_middleware-msgpack)
+
+
 ## Installation
 
 Add this line to your application's Gemfile:
