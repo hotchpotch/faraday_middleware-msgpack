@@ -1,7 +1,5 @@
 # FaradayMiddleware::Msgpack
 
-TODO: Write a gem description
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -16,14 +14,15 @@ Or install it yourself as:
 
     $ gem install faraday_middleware-msgpack
 
-## Usage
+## Examples
 
-TODO: Write usage instructions here
+```
+require 'faraday_middleware/msgpack'
 
-## Contributing
+connection = Faraday.new do |conn|
+  conn.request :msgpack
+  conn.response :msgpack,  :content_type => %r{\bapplication/x-msgpack$}
+  conn.adapter Faraday.default_adapter
+end
+```
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
