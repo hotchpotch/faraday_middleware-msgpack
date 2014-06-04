@@ -60,7 +60,12 @@ module FaradayMiddleware
   end
 end
 
-Faraday.register_middleware :response, :msgpack => FaradayMiddleware::Msgpack::ParseMsgpack
-Faraday.register_middleware :request, :msgpack => FaradayMiddleware::Msgpack::EncodeMsgpack
-
-
+if Faraday::Middleware.respond_to? :register_middleware
+  # faraday >= 0.9
+  Faraday::Response.register_middleware :msgpack => FaradayMiddleware::Msgpack::ParseMsgpack
+  Faraday::Request.register_middleware :msgpack => FaradayMiddleware::Msgpack::EncodeMsgpack
+else
+  # faraday < 0.9
+  Faraday.register_middleware :response, :msgpack => FaradayMiddleware::Msgpack::ParseMsgpack
+  Faraday.register_middleware :request, :msgpack => FaradayMiddleware::Msgpack::EncodeMsgpack
+end
