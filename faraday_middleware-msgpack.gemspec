@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec', '~> 2.6'
 
   gem.name          = "faraday_middleware-msgpack"
-  gem.version       = "0.0.1"
+  gem.version       = "0.0.2"
   gem.authors       = ["Yuichi Tateno"]
   gem.email         = ["hotchpotch@gmail.com"]
   gem.description   = %q{faraday middleware msgpack}
